@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Book
+from .forms import ReviewForm
 
 
 class BookList(generic.ListView):
@@ -27,5 +28,6 @@ class BookDetail(View):
                 "reviews": reviews,
                 "reviewed": False,
                 "liked": liked,
+                "review_form": ReviewForm,
             },
         )
